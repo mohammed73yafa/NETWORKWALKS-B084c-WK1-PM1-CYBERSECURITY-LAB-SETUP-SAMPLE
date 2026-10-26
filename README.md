@@ -61,7 +61,7 @@ It can be used for activities such as:
 - Exploitation practice
 - Security-tool experimentation
 
-⚠️ **Important:** This laboratory must only be used for systems that you own or have explicit permission to test. Do not use the lab or its tools to attack unauthorized systems.
+
 
 ---
 
@@ -78,7 +78,7 @@ Additional target machines can be added to the same virtual network in future pr
 | 🧩 Component       | ⚙️ Configuration   |
 | ------------------ | ------------------- |
 | 🖥️ Host OS         | Windows             |
-| 🧠 Host RAM        | 8 GB+               |
+| 🧠 Host RAM        | 8 GB                |
 | ⚡ Hypervisor      | VMware Workstation  |
 | 🐉 Security OS     | Kali Linux 2026.2   |
 | 🧠 Kali RAM        | 2048 MB             |
