@@ -132,7 +132,7 @@ The VM was allocated:
 RAM: 2048 MB
 
 ```
-
+![](3-screenshot-kali-linux.png)
 ---
 
 ## Step 4. Configure the Kali Linux Network
@@ -148,7 +148,7 @@ Gateway: 10.0.0.1
 DNS: 8.8.8.8
 
 ```
-
+![](4-screenshot-kali-network-settings.png)
 ---
 
 # 🔎 Lab Verification
