@@ -123,3 +123,130 @@ The VM network adapter was configured as follows:
 
 ```text
 Network Connection: Custom: Specific virtual network -> VMnet10 (NAT)
+
+```
+
+The VM was allocated:
+
+```text
+RAM: 2048 MB
+
+```
+
+---
+
+## Step 4. Configure the Kali Linux Network
+
+The Kali Linux network interface was configured manually with a static IPv4 address to ensure stability and consistency across lab exercises.
+
+Configuration:
+
+```text
+IP Address: 10.0.0.2
+Subnet Mask: 255.255.255.0 (Prefix /24)
+Gateway: 10.0.0.1
+DNS: 8.8.8.8
+
+```
+
+---
+
+# 🔎 Lab Verification
+
+| ✅ Test | 🧾 Command | 🎯 Expected Result |
+| --- | --- | --- |
+| 🌐 Check IP address | `ip a` | Correct Kali IP (`10.0.0.2`) |
+| 📡 Test gateway | `ping 10.0.0.1` | Successful replies (0% loss) |
+| 🌍 Test Internet connectivity | `ping 8.8.8.8` | Successful packet routing |
+
+### Example Results
+
+```text
+IP Address:
+10.0.0.2/24
+
+Gateway:
+10.0.0.1
+
+DNS:
+8.8.8.8
+
+```
+
+---
+
+# 🐞 Problems Encountered & Solutions
+
+Documenting problems is an important part of the project.
+
+## Problem 1. Static IP Address Activation in NetworkManager
+
+After manually applying static IPv4 settings in Linux, network interface states can occasionally experience duplicate address detection delays or fail to activate cleanly.
+
+Solution applied:
+
+```bash
+sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
+sudo nmcli connection down "Wired connection 1"
+sudo nmcli connection up "Wired connection 1"
+
+```
+
+The network connection was successfully restarted and verified.
+
+> **Important:** Network interface and connection names may differ between systems. Verify your actual connection name before executing `nmcli` commands.
+
+---
+
+# 💡 What I Learned
+
+Through this project, I learned how to create and configure a virtual environment for cybersecurity practice.
+
+The most important concepts I learned include:
+
+### 1. Custom NAT Virtual Networks
+
+Configuring custom virtual switches and network segments (`VMnet`) to isolate lab traffic while allowing controlled routing.
+
+### 2. Virtual Machine Networking
+
+Understanding how hypervisor network adapters attach virtual machines to designated subnets and affect internal communication.
+
+### 3. Static IP Configuration
+
+Configuring and verifying static IPv4 parameters, subnet masks, and gateways in Linux distributions.
+
+### 4. Troubleshooting Network Interfaces
+
+Resolving network manager states and interface activation parameters using command-line administration tools.
+
+---
+
+# 🔐 Security & Ethical Use
+
+This laboratory is intended strictly for education purposes only.
+
+---
+
+# 🔗 Tools & Resources
+
+* **VMware Workstation:** [https://www.vmware.com](https://www.vmware.com)
+* **Kali Linux:** [https://kali.org/get-kali](https://kali.org/get-kali)
+
+---
+
+# 👤 Author
+
+**Muhammad Sami **
+
+Cybersecurity Student
+
+---
+
+## 📌 Project Information
+
+**Program Name:** Cybersecurity Training | **Week:** 01 | **Project:** Cybersecurity & Pentesting Lab Setup | **Repository:** GitHub
+
+```
+
+```
